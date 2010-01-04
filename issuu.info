@@ -1,0 +1,6 @@
+; $Id$
+name = Issuu
+description = Uses issuu.com to convert pdf's into publications
+package = User Interface
+php = 5.2
+core = 6.x
