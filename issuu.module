@@ -1,3 +1,22 @@
 <?php
 
-echo "fisk";
+/**
+ * Implementation of hook_menu
+ */
+function issuu_menu() {
+  $items['admin/settings/issuu'] = array(
+    'title' => 'Issuu',
+    'description' => 'Setup issuu to display files as publications inline with JavaScript (http://issuu.com/smartlook)',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array(
+      'issuu_admin_settings'
+    ),
+    'access arguments' => array(
+      'administer site configuration'
+    ),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'issuu.admin.inc',
+  );
+
+  return $items;
+}
