@@ -20,3 +20,15 @@ function issuu_menu() {
 
   return $items;
 }
+
+/**
+ * Implementation of hook_init
+ */
+function issuu_init() {
+  $guid = variable_get('issuu_guid', NULL);
+  $domain = variable_get('issuu_domain', NULL);
+  if ($guid != null && $domain != null) {    
+    drupal_add_js('var issuuConfig = { guid: "' .$guid. '", domain: "' .$domain. '"};', 'inline');
+    drupal_add_js(drupal_get_path('module', 'issuu'). '/issuu.js');
+  }
+}
