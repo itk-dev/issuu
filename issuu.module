@@ -29,6 +29,6 @@ function issuu_init() {
   $domain = variable_get('issuu_domain', NULL);
   if ($guid != null && $domain != null) {    
     drupal_add_js('var issuuConfig = { guid: "' .$guid. '", domain: "' .$domain. '"};', 'inline');
-    drupal_add_js(drupal_get_path('module', 'issuu'). '/issuu.js');
+    drupal_add_js(drupal_get_path('module', 'issuu'). '/issuu.js', 'module', 'footer', FALSE, FALSE, FALSE);
   }
 }
