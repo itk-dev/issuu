@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Implementation of hook_uninstall
+ */
+function issuu_uninstall() {
+  variable_del('issuu_domain');
+  variable_del('issuu_guid');
+}
